@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
     emailAddress: '',
     isValid: Ember.computed.match('emailAddress', /^.+@.+\..+$/),
-    hasEnteredMessage: Ember.computed.notEmpty('textMessage'),
-    isEnabled: Ember.computed.and('isValid', 'hasEnteredMessage'),
+    messageIsLongEnough: Ember.computed.gte('textMessage.length', 5),
+    isEnabled: Ember.computed.and('isValid', 'messageIsLongEnough'),
 
     actions: {
         saveMessage() {

@@ -8,7 +8,10 @@ export default Ember.Controller.extend({
 
     actions: {
         saveMessage() {
-            alert(`Received email:${this.get('emailAddress')} and your message ${this.get('textMessage')}`),
+            const email = this.get('emailAddress');
+            const message = this.get('textMessage')
+            const newContact = this.store.createRecord('contact', {email: email, message: message });
+            newContact.save();
             this.set('responseMessage', `We got your message and we'll get in touch soon`),
             this.set('emailAddress', ''),
             this.set('textMessage', '')

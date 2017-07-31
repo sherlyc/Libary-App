@@ -11,6 +11,7 @@ export default Ember.Controller.extend({
 
   actions: {
       saveInvitation() {
+          console.log("pressed request invitation")
           const email = this.get('emailAddress');
           const newInvitation = this.store.createRecord('invitation', { email: email });
           newInvitation.save().then((response) => {

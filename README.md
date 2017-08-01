@@ -5,7 +5,7 @@ A Libraries App developed to learn about Ember.JS and Firebase.
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd library-app`
+* `cd libary-app`
 * `npm install`
 
 ## Running / Development
